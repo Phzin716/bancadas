@@ -1,146 +1,8 @@
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<title>BC Marmoraria</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-<style> 
-/* ===== SOBRE COM IMAGENS CORRETAS ===== */
-.sobre-box{
-  display:flex;
-  justify-content:space-between; /* imagem esquerda, texto direita */
-  align-items:flex-start;         /* topo alinhado */
-  gap:40px;
-}
-
-.sobre-imagens{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-  flex-shrink:0;   /* impede que a imagem encolha */
-}
-
-.sobre-imagens img{
-  width:450px;     /* aumenta as imagens */
-  height:auto;
-  display:block;
-  border-radius:6px;
-}
-
-.sobre-texto{
-  max-width:700px;
-  line-height:2.0;
-  font-size:17px;
-  color:#ccc;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-  .sobre-box{
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-  }
-
-  .sobre-imagens img{
-    width:90%;
-    max-width:450px;
-  }
-}
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-  background:#0f0f0f;
-  color:#fff;
-}
-
-/* ================= HEADER ================= */
-header{
-  background:#000;
-  padding:20px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:3px solid #c9a24d;
-}
-
-.logo img{
-  height:120px;
-}
-
-.frase-topo{
-  font-family: 'Playfair Display', serif;
-  font-size:32px;
-  color:#ddd;
-  text-align:center;
-  flex:1;
-  letter-spacing:1px;
-}
-
-nav a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:25px;
-  font-size:14px;
-  text-transform:uppercase;
-}
-
-nav a:hover{
-  color:#c9a24d;
-}
-
-/* ================= HERO ================= */
-.hero{
-  width:100%;
-  background-image:url("imagens/fundo-imagem-marmore.jpeg");
-  background-position:center;
-  background-size:cover;
-  background-repeat:no-repeat;
-  position:relative;
-  padding:120px 20px 100px;
-  text-align:center;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-}
-
-.hero > *{
-  position:relative;
-  z-index:2;
-}
-
-.hero-frase{
-  font-family: 'Playfair Display', serif;
-  font-size:32px;
-  font-weight:600;
-  letter-spacing:1px;
-  max-width:1000px;
-  margin:-40px auto 30px;
-  line-height:1.4;
-}
-
-/* ================= SUBFRASE ================= */
-.hero-subfrase{
-  font-size:22px; /* maior */
-  color:#000;    /* preta */
-  margin-bottom:40px;
-}
-
-/* ================= GALERIA ================= */
 .galeria{
   max-width:1320px;
   margin:0 auto 60px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:20px;
 }
 
@@ -151,6 +13,7 @@ nav a:hover{
   cursor:pointer;
   transition:transform .3s;
 }
+
 .galeria img:hover{
   transform:scale(1.03);
 }
@@ -159,7 +22,6 @@ nav a:hover{
 @media (max-width:768px){
   .galeria{
     grid-template-columns:repeat(2,1fr);
-    gap:12px;
   }
 }
 /* ================= BOTÃO ================= */
@@ -184,7 +46,6 @@ nav a:hover{
   justify-content:center;
   z-index:999;
   padding:20px;
-  overflow:auto;
 }
 
 .lightbox-content{
@@ -340,24 +201,7 @@ nav a{
 }
 
 }
-@media(max-width:768px){
 
-.lightbox-content{
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-}
-
-.lightbox img{
-  max-width:90%;
-  height:auto;
-}
-
-.lightbox-text{
-  max-width:90%;
-}
-
-}
 </style>
 </head>
 
@@ -425,7 +269,7 @@ nav a{
 
   <!-- CARROSEL 6 - TRAVERTINO -->
   <img src="imagens/carroself6.png" 
-       data-title="Travertino Romano" 
+       data-title=Travertino Romano" 
        data-desc="Pedra natural de estética clássica e textura marcante, o Travertino Romano confere elegância atemporal e identidade única aos projetos. Sua formação natural garante variações exclusivas de veios e tonalidades, valorizando ambientes internos como banheiros, lavabos, halls e áreas decorativas. Quando corretamente tratado e impermeabilizado, oferece bom desempenho, durabilidade e acabamento refinado, sendo uma escolha que une beleza natural, sofisticação e exclusividade." 
        onclick="abrirImagem(this)">
 
@@ -520,25 +364,3 @@ Mesmo com tecnologia avançada e processos automatizados, mantemos aquilo que no
     <p>Instagram: <a href="https://www.instagram.com/becbancadas/" target="_blank">@becbancadas</a></p>
   </div>
 </section>
-
-<script>
-function abrirImagem(img){
-  document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-img").src = img.src;
-  document.getElementById("lightbox-title").innerText = img.dataset.title;
-  document.getElementById("lightbox-desc").innerText = img.dataset.desc;
-}
-
-function fecharImagem(){
-  document.getElementById("lightbox").style.display = "none";
-}
-</script>
-
-</body>
-</html>
-
-
-
-
-
-
